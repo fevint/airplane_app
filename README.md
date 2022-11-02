@@ -1,4 +1,4 @@
-# apk_airplane
+# airplane_app
 
 A new Flutter project.
 
