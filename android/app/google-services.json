@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100046039388",
+    "project_id": "utdpmi-de255",
+    "storage_bucket": "utdpmi-de255.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100046039388:android:51be4715ef798f77107999",
+        "android_client_info": {
+          "package_name": "com.fevint.airplane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100046039388-tko30ultgn2n3mbj2njeujsvo12fm13h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACqG3sojiTZBk8gcCPnvXucRWq5JSQCjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100046039388-tko30ultgn2n3mbj2njeujsvo12fm13h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
