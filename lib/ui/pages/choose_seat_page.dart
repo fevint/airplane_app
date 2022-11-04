@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/checkout_page.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
@@ -288,7 +290,7 @@ class ChooseSeatPage extends StatelessWidget {
 
             //NOTE: Your Seat
             Container(
-              margin: EdgeInsets.only(top: 30),
+              margin: const EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
