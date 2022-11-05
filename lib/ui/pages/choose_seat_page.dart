@@ -2,6 +2,7 @@
 
 import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:airplane/model/destination_model.dart';
+import 'package:airplane/model/transaction_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/checkout_page.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
@@ -148,7 +149,7 @@ class ChooseSeatPage extends StatelessWidget {
                       height: 48,
                       child: Center(
                         child: Text(
-                          'c',
+                          'C',
                           style: greyTextStyle.copyWith(fontSize: 16),
                         ),
                       ),
@@ -178,7 +179,7 @@ class ChooseSeatPage extends StatelessWidget {
                         isAvailable: false,
                       ),
                       const SeatItems(
-                        id: 'B2',
+                        id: 'B1',
                       ),
                       Container(
                         width: 48,
@@ -392,18 +393,34 @@ class ChooseSeatPage extends StatelessWidget {
     }
 
     Widget checkOutButton() {
-      return CustomButton(
-        margin: const EdgeInsets.only(
-          top: 30,
-          bottom: 46,
-        ),
-        title: 'Continue to Checkout',
-        onPress: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CheckoutPage(),
+      return BlocBuilder<SeatCubit, List<String>>(
+        builder: (context, state) {
+          return CustomButton(
+            margin: const EdgeInsets.only(
+              top: 30,
+              bottom: 46,
             ),
+            title: 'Continue to Checkout',
+            onPress: () {
+              int price = destination.price * state.length;
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CheckoutPage(
+                    TransactionModel(
+                      destination: destination,
+                      amountOfTraveler: state.length,
+                      selectedSeats: state.join(', '),
+                      insurance: true,
+                      refundable: false,
+                      vat: 0.45,
+                      price: price,
+                      grandTotal: price + (price * 0.45).toInt(),
+                    ),
+                  ),
+                ),
+              );
+            },
           );
         },
       );

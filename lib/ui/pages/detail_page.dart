@@ -228,7 +228,9 @@ class DetailPage extends StatelessWidget {
                         ),
                         Text(
                           'per orang',
-                          style: greyTextStyle.copyWith(fontWeight: light),
+                          style: greyTextStyle.copyWith(
+                            fontWeight: light,
+                          ),
                         ),
                       ],
                     ),
@@ -236,12 +238,13 @@ class DetailPage extends StatelessWidget {
                   //NOTE: BUTTON
                   CustomButton(
                     title: 'Book Now',
-                    width: 170,
+                    width: 150,
                     onPress: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  ChooseSeatPage(destination)));
+                              builder: (context) =>
+                                  ChooseSeatPage(destination)));
                     },
                   ),
                 ],
