@@ -88,7 +88,7 @@ class SignUpPage extends StatelessWidget {
             }
             return CustomButton(
                 title: 'Get Started',
-                onPress: () {
+                onPressed: () {
                   context.read<AuthCubit>().signUp(
                         email: emailController.text,
                         password: passwordController.text,

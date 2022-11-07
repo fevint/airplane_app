@@ -1,6 +1,7 @@
-// ignore_for_file: depend_on_referenced_packages, empty_catches
+// ignore_for_file: depend_on_referenced_packages
 
 import 'package:airplane/model/transaction_model.dart';
+
 import 'package:airplane/services/transaction_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -14,7 +15,20 @@ class TransactionCubit extends Cubit<TransactionState> {
     try {
       emit(TransactionLoading());
       await TransactionService().createTransaction(transaction);
-      emit(TransactionSuccess());
+      emit(TransactionSuccess(const []));
+    } catch (e) {
+      emit(TransactionFailed(e.toString()));
+    }
+  }
+
+  void fetchTransactions() async {
+    try {
+      emit(TransactionLoading());
+
+      List<TransactionModel> transactions =
+          await TransactionService().fetchTransactions();
+
+      emit(TransactionSuccess(transactions));
     } catch (e) {
       emit(TransactionFailed(e.toString()));
     }

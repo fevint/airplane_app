@@ -8,13 +8,14 @@ class DestinationModel extends Equatable {
   final double rating;
   final int price;
 
-  const DestinationModel(
-      {required this.id,
-      this.name = '',
-      this.city = '',
-      this.imageUrl = '',
-      this.rating = 0.0,
-      this.price = 0});
+  const DestinationModel({
+    required this.id,
+    this.name = '',
+    this.city = '',
+    this.imageUrl = '',
+    this.rating = 0.0,
+    this.price = 0,
+  });
 
   factory DestinationModel.fromJson(String id, Map<String, dynamic> json) =>
       DestinationModel(

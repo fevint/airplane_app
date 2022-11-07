@@ -3,9 +3,10 @@ import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class BonusPage extends StatelessWidget {
-  const BonusPage({super.key});
+  const BonusPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +89,11 @@ class BonusPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    state.user.balance.toString(),
+                    NumberFormat.currency(
+                            locale: 'id', symbol: 'IDR ', decimalDigits: 0)
+                        .format(
+                      state.user.balance,
+                    ),
                     style: whiteTextStyle.copyWith(
                       fontSize: 26,
                       fontWeight: medium,
@@ -140,7 +145,7 @@ class BonusPage extends StatelessWidget {
           title: 'Start Fly Now',
           width: 220,
           margin: const EdgeInsets.only(top: 50),
-          onPress: () {
+          onPressed: () {
             Navigator.pushNamedAndRemoveUntil(
                 context, '/main', (route) => false);
           });

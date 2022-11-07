@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 part of 'transaction_cubit.dart';
 
 abstract class TransactionState extends Equatable {
@@ -11,12 +13,19 @@ class TransactionInitial extends TransactionState {}
 
 class TransactionLoading extends TransactionState {}
 
-class TransactionSuccess extends TransactionState {}
+class TransactionSuccess extends TransactionState {
+  final List<TransactionModel> transactions;
+
+  TransactionSuccess(this.transactions);
+
+  @override
+  List<Object> get props => [transactions];
+}
 
 class TransactionFailed extends TransactionState {
   final String error;
 
-  const TransactionFailed(this.error);
+  TransactionFailed(this.error);
 
   @override
   List<Object> get props => [error];

@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 // ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 
@@ -12,13 +10,12 @@ class SeatCubit extends Cubit<List<String>> {
     } else {
       state.remove(id);
     }
-    print(state);
+
     emit(List.from(state));
   }
 
   bool isSelected(String id) {
     int index = state.indexOf(id);
-
     if (index == -1) {
       return false;
     } else {

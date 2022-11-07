@@ -9,7 +9,7 @@ import 'package:intl/intl.dart';
 
 class DetailPage extends StatelessWidget {
   final DestinationModel destination;
-  const DetailPage(this.destination, {super.key});
+  const DetailPage(this.destination, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +239,7 @@ class DetailPage extends StatelessWidget {
                   CustomButton(
                     title: 'Book Now',
                     width: 150,
-                    onPress: () {
+                    onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SettinPage extends StatelessWidget {
-  const SettinPage({super.key});
+  const SettinPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class SettinPage extends StatelessWidget {
         return Center(
           child: CustomButton(
             title: 'Log out',
-            onPress: () {
+            onPressed: () {
               context.read<AuthCubit>().signOut();
             },
             width: 220,

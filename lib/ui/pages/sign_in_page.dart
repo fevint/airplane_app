@@ -70,7 +70,7 @@ class SignInPage extends StatelessWidget {
             }
             return CustomButton(
                 title: 'Sign In',
-                onPress: () {
+                onPressed: () {
                   context.read<AuthCubit>().signIn(
                         email: emailController.text,
                         password: passwordController.text,

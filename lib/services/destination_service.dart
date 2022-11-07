@@ -1,3 +1,5 @@
+// ignore_for_file: use_rethrow_when_possible
+
 import 'package:airplane/model/destination_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -16,7 +18,6 @@ class DestinationService {
 
       return destionations;
     } catch (e) {
-      // ignore: use_rethrow_when_possible
       throw e;
     }
   }

@@ -4,9 +4,9 @@ import '../../shared/theme.dart';
 class InterestsItems extends StatelessWidget {
   final String text;
   const InterestsItems({
-    super.key,
+    Key? key,
     required this.text,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

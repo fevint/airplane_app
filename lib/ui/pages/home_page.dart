@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -136,8 +136,8 @@ class _HomePageState extends State<HomePage> {
           return ListView(
             children: [
               header(),
-              popularDestinatios(state.destination),
-              newDestinations(state.destination),
+              popularDestinatios(state.destinations),
+              newDestinations(state.destinations),
             ],
           );
         } else {

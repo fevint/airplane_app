@@ -7,11 +7,12 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final TextEditingController controller;
   const CustomTextFormField(
-      {super.key,
+      {Key? key,
       required this.title,
       required this.hintText,
       this.obscureText = false,
-      required this.controller});
+      required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

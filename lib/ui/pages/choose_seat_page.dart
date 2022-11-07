@@ -13,7 +13,7 @@ import 'package:intl/intl.dart';
 
 class ChooseSeatPage extends StatelessWidget {
   final DestinationModel destination;
-  const ChooseSeatPage(this.destination, {super.key});
+  const ChooseSeatPage(this.destination, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -401,7 +401,7 @@ class ChooseSeatPage extends StatelessWidget {
               bottom: 46,
             ),
             title: 'Continue to Checkout',
-            onPress: () {
+            onPressed: () {
               int price = destination.price * state.length;
               Navigator.push(
                 context,

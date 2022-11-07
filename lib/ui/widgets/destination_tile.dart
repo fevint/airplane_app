@@ -7,8 +7,8 @@ class DestinationTile extends StatelessWidget {
   final DestinationModel destination;
   const DestinationTile(
     this.destination, {
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

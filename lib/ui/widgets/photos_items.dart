@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class PhotosItems extends StatelessWidget {
   final String imageUrl;
   const PhotosItems({
-    super.key,
+    Key? key,
     required this.imageUrl,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

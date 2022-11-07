@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 part of 'auth_cubit.dart';
 
 abstract class AuthState extends Equatable {
@@ -14,7 +16,7 @@ class AuthLoading extends AuthState {}
 class AuthSuccess extends AuthState {
   final UserModel user;
 
-  const AuthSuccess(this.user);
+  AuthSuccess(this.user);
 
   @override
   List<Object> get props => [user];
@@ -23,7 +25,7 @@ class AuthSuccess extends AuthState {
 class AuthFailed extends AuthState {
   final String error;
 
-  const AuthFailed(this.error);
+  AuthFailed(this.error);
 
   @override
   List<Object> get props => [error];

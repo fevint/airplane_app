@@ -9,10 +9,10 @@ class SeatItems extends StatelessWidget {
   final String id;
   final bool isAvailable;
   const SeatItems({
-    super.key,
+    Key? key,
     required this.id,
     this.isAvailable = true,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

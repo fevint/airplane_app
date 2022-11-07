@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String title;
   final double width;
-  final Function() onPress;
+  final Function() onPressed;
   final EdgeInsets margin;
   const CustomButton(
-      {super.key,
+      {Key? key,
       required this.title,
       this.width = double.infinity,
       this.margin = EdgeInsets.zero,
-      required this.onPress});
+      required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(defaultRadius),
           ),
         ),
-        onPressed: onPress,
+        onPressed: onPressed,
         child: Text(
           title,
           style: whiteTextStyle.copyWith(

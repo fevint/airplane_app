@@ -13,6 +13,7 @@ class DestinationCubit extends Cubit<DestinationState> {
   void fetchDestinations() async {
     try {
       emit(DestinationLoading());
+
       List<DestinationModel> destinations =
           await DestinationService().fetchDestinations();
 

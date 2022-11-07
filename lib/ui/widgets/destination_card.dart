@@ -7,8 +7,8 @@ class DestinationCard extends StatelessWidget {
   final DestinationModel destination;
   const DestinationCard(
     this.destination, {
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
